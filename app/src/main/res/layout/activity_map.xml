@@ -13,7 +13,7 @@
         android:id="@+id/my_toolbar"
         android:layout_width="fill_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="@color/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:padding="0dp"
@@ -29,13 +29,13 @@
             android:layout_height="wrap_content"
             android:src="@drawable/arrleft"
             android:paddingLeft="0dp"
-            android:background="#ffffff"/>
+            android:background="@color/colorPrimary"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="Location Sharing"
-            android:textColor="#33B5E5"/>
+            android:textColor="#FFFFFF"/>
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
@@ -55,7 +55,7 @@
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="match_parent"
-            android:text="12356KM"
+            android:text="KM"
             android:textAlignment="center"
             android:layout_marginTop="20dp"
             android:textSize="30dp"/>

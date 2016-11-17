@@ -1,34 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/activity_person"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.example.youhan.a4295.person">
+    android:padding="0dp"
+    tools:context="com.example.youhan.a4295.Person"
+    android:background="#F5F5F5">
 
-    <android.support.design.widget.AppBarLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar_person"
+        android:layout_width="fill_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:padding="0dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:id="@+id/person_goback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrleft"
+            android:paddingLeft="0dp"
+            android:background="@color/colorPrimary" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Personal Information"
+            android:textColor="#FFFFFF"/>
+    </android.support.v7.widget.Toolbar>
+    
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppBarOverlay">
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="12"
+            android:layout_height="match_parent"
+            android:text="Profile Photo"
+            android:textSize="25dp"
+            android:paddingTop="25dp"
+            android:paddingLeft="15dp"
+            />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/PopupOverlay" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:src="@drawable/profile_photo"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.2"
+            android:src="@drawable/arright"/>
 
-    </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_person" />
+    </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="15dp">
 
-</android.support.design.widget.CoordinatorLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="12"
+            android:layout_height="match_parent"
+            android:text="Nickname"
+            android:textSize="25dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"/>
+
+
+        <ImageView
+            android:id="@+id/modify_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:src="@drawable/arright"/>
+
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="12"
+            android:layout_height="match_parent"
+            android:text="Email"
+            android:textSize="25dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"/>
+
+        <ImageView
+            android:id="@+id/modify_email"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:src="@drawable/arright"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="12"
+            android:layout_height="match_parent"
+            android:text="Password"
+            android:textSize="25dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"/>
+
+        <ImageView
+            android:id="@+id/modify_password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:src="@drawable/arright"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.youhan.a4295">
 
     <!--
@@ -53,14 +52,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".photo" />
-        <activity
-            android:name=".person"
-            android:label="@string/title_activity_person"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.youhan.a4295.Location" />
-        </activity>
+        <activity android:name=".Person"></activity>
     </application>
 
 </manifest>
