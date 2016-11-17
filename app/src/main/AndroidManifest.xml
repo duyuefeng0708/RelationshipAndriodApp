@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.youhan.a4295">
 
     <!--
@@ -23,6 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".InitializationActivity" />
+        <activity android:name=".PartnerConnectionActivity" />
         <activity android:name=".Profile" />
         <activity android:name=".Location" />
         <!--
@@ -53,7 +56,11 @@
         <activity
             android:name=".person"
             android:label="@string/title_activity_person"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.youhan.a4295.Location" />
+        </activity>
     </application>
 
 </manifest>

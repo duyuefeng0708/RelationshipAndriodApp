@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import static com.example.youhan.a4295.R.styleable.Toolbar;
+
 public class Location extends AppCompatActivity {
 
     @Override
