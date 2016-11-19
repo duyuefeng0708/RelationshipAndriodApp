@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +25,10 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        setTitle("Register");
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_p);
+        setSupportActionBar(myToolbar);
         txtEmail = (EditText) findViewById(R.id.etEmail);
         txtPassword = (EditText) findViewById(R.id.etPassword);
         txtPasswordConfirm = (EditText) findViewById(R.id.etPasswordConfirm);

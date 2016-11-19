@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_position"
-    android:layout_width="fill_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent"
-    android:padding="0dp"
-    tools:context="com.example.youhan.a4295.Location"
-    android:background="#f5f5f5">
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context="com.example.youhan.a4295.Timeline"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar_p"
@@ -29,8 +27,9 @@
         android:id="@+id/navigation_p"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/my_toolbar_p"
         android:background="#FFFFFF"
-        android:layout_alignParentTop="true">
+        >
 
         <ImageButton
             android:id="@+id/button1_p"
@@ -76,77 +75,53 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/linearlayout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edittext_message_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxHeight="200dp"
+            android:layout_weight="5"
+            android:hint="@string/input_message"
+            android:fontFamily="@string/font_mono"
+            android:inputType="textNoSuggestions|textMultiLine" />
+
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Partner's update : 21 hours ago"
-            android:textAlignment="center"
+            android:id="@+id/send_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
             android:paddingTop="5dp"
-            android:textColor="#FFFFFF"
-            android:background="#008b8b"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        android:background="#F5F5F5">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:src="@drawable/profile_photo"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="match_parent"
-            android:text="0KM"
-            android:textAlignment="center"
-            android:layout_marginTop="20dp"
-            android:textSize="30dp"/>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:src="@drawable/profile_photo"/>
-
+            android:paddingBottom="5dp"
+            android:layout_marginRight="4dp"
+            android:background="@color/colorAccent"
+            android:foreground="?attr/selectableItemBackground"
+            android:textColor="@color/white"
+            android:text="@string/jot_down"
+            android:textSize="18sp"
+            android:gravity="center"/>
     </LinearLayout>
-    
-    <LinearLayout
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_message_show"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="match_parent"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
-        android:background="#F5F5F5"
+        android:layout_below="@+id/navigation_p"
+        android:layout_above="@id/linearlayout_bottom">
 
-        android:orientation="vertical">
+    </android.support.v7.widget.RecyclerView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textColor="#008b8b"
-            android:id="@+id/tvLoverName" />
-
-        <TextView
-            android:id="@+id/line1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxWidth="300dp"
-            android:text="address"
-            />
-
-
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/map_image"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/couple"/>
-
-
-
-</LinearLayout>
+</RelativeLayout>

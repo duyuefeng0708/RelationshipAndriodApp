@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_main"
-    android:layout_width="fill_parent"
-    android:orientation="vertical"
+    android:id="@+id/activity_chat"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="0dp"
-    tools:context="com.example.youhan.a4295.MainActivity">
+    tools:context="com.example.youhan.a4295.ChatActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -15,7 +14,6 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
         app:titleTextColor="#FFFFFF"
-        android:textColorPrimary="@color/title"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:padding="0dp"
@@ -29,7 +27,7 @@
         android:id="@+id/navigation"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true">
+        android:layout_below="@id/my_toolbar">
 
         <ImageButton
             android:id="@+id/button1"
@@ -75,57 +73,47 @@
 
     </LinearLayout>
 
-    <com.example.youhan.a4295.coverPicture
-        android:layout_width="fill_parent"
+    <EditText
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:src="@drawable/couple" />
+        android:inputType="text|textShortMessage|textLongMessage"
+        android:ems="10"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/etTextInput"
+        android:layout_toStartOf="@+id/btSend"
+        android:hint="Type here" />
 
-    <LinearLayout
-        android:id="@+id/functionBar"
-        android:orientation="horizontal"
+    <Button
+        android:text="Send"
+        android:layout_height="wrap_content"
+        android:id="@+id/btSend"
+        android:layout_alignTop="@+id/etTextInput"
+        android:layout_alignParentEnd="true"
+        android:onClick="btSendClick"
+        android:layout_width="75dp" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true">
+        android:id="@+id/scrowview"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/navigation"
+        android:layout_above="@id/etTextInput">
 
-        <ImageButton
-            android:id="@+id/functionButton1"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_margin="0dp"
-            android:layout_height="80dp"
-            android:src="@drawable/sleep"
-            android:elevation="0dp"
-            android:scaleType="fitCenter"
-            android:scrollbarSize="0dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-        <ImageButton
-            android:id="@+id/functionButton2"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_margin="0dp"
-            android:layout_height="80dp"
-            android:layout_toRightOf="@id/functionButton1"
-            android:src="@drawable/photo"
-            android:elevation="0dp"
-            android:scaleType="fitCenter"
-            android:scrollbarSize="0dp" />
+            <TextView
+                android:paddingTop="5dp"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvConversation" />
+        </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/functionButton3"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_margin="0dp"
-            android:layout_height="80dp"
-            android:layout_toRightOf="@id/functionButton2"
-            android:src="@drawable/calendar"
-            android:scaleType="fitCenter"
-            android:elevation="0dp"
-            android:scrollbarSize="0dp" />
+    </ScrollView>
 
-    </LinearLayout>
-
-
-
-
-</LinearLayout>
+</RelativeLayout>

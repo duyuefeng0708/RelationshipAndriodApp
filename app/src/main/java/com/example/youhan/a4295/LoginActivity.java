@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -36,6 +37,14 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Intent i = getIntent();
+        final String user = i.getStringExtra("username");
+        final String partner = i.getStringExtra("partnername");
+        setTitle("Login");
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_p);
+        setSupportActionBar(myToolbar);
+
         txtEmail = (EditText) findViewById(R.id.etEmail);
         txtPassword = (EditText) findViewById(R.id.etPassword);
         firebaseAuth = FirebaseAuth.getInstance();
@@ -69,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
                                         if (dataSnapshot.child(partnerName).child("Partner").getValue().equals(name)) {
                                             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                             Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                                            i.putExtra("username",name);
+                                            i.putExtra("partnername",partnerName);
                                             startActivity(i);
                                         } else {
                                             Intent i = new Intent(LoginActivity.this, InitializationActivity.class);

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:background="@color/white">
+
+  <android.support.v7.widget.Toolbar
+      android:id="@+id/my_toolbar_person"
+      android:layout_width="fill_parent"
+      android:layout_height="?attr/actionBarSize"
+      android:background="@color/colorPrimary"
+      android:elevation="4dp"
+      android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+      android:padding="0dp"
+      app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+      android:layout_marginLeft="0dp"
+      android:layout_marginRight="0dp"
+      android:layout_alignParentTop="true"
+      android:layout_alignParentStart="true">
+
+    <ImageButton
+        android:id="@+id/alarm_goback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrleft"
+        android:paddingLeft="0dp"
+        android:background="@color/colorPrimary" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Event Alarm"
+        android:textColor="#FFFFFF"/>
+
+  </android.support.v7.widget.Toolbar>
+
+  <Button
+    style="@style/widget"
+    android:id="@+id/add_alarm"
+    android:text="Add alarm"
+    android:onClick="onAddAlarmClick" />
+
+  <ListView
+    style="@style/widget"
+    android:id="@+id/alarm_list" />
+
+</LinearLayout>
+

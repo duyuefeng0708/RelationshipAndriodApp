@@ -13,12 +13,18 @@ public class Person extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_person);
 
+        Intent i = getIntent();
+        final String user = i.getStringExtra("username");
+        final String partner = i.getStringExtra("partnername");
+
         ImageButton goback = (ImageButton) findViewById(R.id.person_goback);
 
         goback.setOnClickListener(new ImageButton.OnClickListener(){
             public void onClick(View v){
                 Intent i = new Intent();
                 i.setClass(Person.this, Profile.class);
+                i.putExtra("username",user);
+                i.putExtra("partnername",partner);
                 startActivity(i);
             }
         });
